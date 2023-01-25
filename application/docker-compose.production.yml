@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+    # image project
+    app:
+        build:
+            context: ./docker/8.1
+            dockerfile: Dockerfile
+        restart: unless-stopped
+        ports:
+            - '80:80'
+        working_dir: /var/www/
+        volumes:
+            - ./:/var/www
